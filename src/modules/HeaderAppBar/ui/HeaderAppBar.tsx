@@ -5,6 +5,7 @@ import { useUserStore } from '../store/useUserStore'
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage'
 import { ProfileAvatar } from '@/components/ProfileAvatar/ui/ProfileAvatar'
 import { NavLink } from 'react-router-dom'
+import { AppRoutesPaths } from '@/shared/config/router/routesConfig'
 
 export const HeaderAppBar = () => {
   const { _inited, user, logout } = useUserStore()
@@ -17,7 +18,7 @@ export const HeaderAppBar = () => {
     <div className={cls.appBar}>
       <div className="container">
         <div className={cls.headerWrapper}>
-          <NavLink to={'/'} data-testid="LogoLink">
+          <NavLink to={AppRoutesPaths.main} data-testid="LogoLink">
             <div className="flex items-center gap-[5px]">
               <img
                 src={`${typeof logoIcon === 'function' ? '' : logoIcon}`}

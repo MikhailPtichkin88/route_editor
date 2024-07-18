@@ -4,6 +4,7 @@ import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage'
 import { IUserData } from '@/modules/HeaderAppBar'
 import { toast } from 'sonner'
 import { useNavigate } from 'react-router-dom'
+import { AppRoutesPaths } from '@/shared/config/router/routesConfig'
 
 interface IUseAuthProps {
   setUserData: (data: Omit<IUserData, 'password'>) => void
@@ -33,7 +34,7 @@ export const useAuth = ({
       setUserData(data)
       toast.success(`You have successfully ${type}`)
       resetForm()
-      navigate('/')
+      navigate(AppRoutesPaths.main)
     },
     onError: (error, { type }) => {
       console.error(error)

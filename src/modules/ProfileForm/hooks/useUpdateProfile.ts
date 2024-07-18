@@ -4,6 +4,7 @@ import { IProfileData } from '../store/useProfileStore'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage'
+import { AppRoutesPaths } from '@/shared/config/router/routesConfig'
 
 interface IUpdateProfile {
   userId: string
@@ -31,7 +32,7 @@ export const useUpdateProfile = ({ userId, setUserData }: IUpdateProfile) => {
       localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(data))
       setUserData(data)
       toast.success(`Profile successfully updated`)
-      navigate('/')
+      navigate(AppRoutesPaths.main)
     },
   })
   return { updateProfile, data, isSuccess, isPending }

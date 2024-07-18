@@ -20,7 +20,8 @@ export function buildPlugins({
       favicon: path.resolve(paths.public, 'favicon.ico'),
     }),
     new DefinePlugin({
-      __API__: JSON.stringify(isDev ? apiUrl : process.env.BASE_URL),
+      __API__: JSON.stringify(apiUrl),
+      __BASE_URL__: JSON.stringify(isDev ? "" : "/route_app"),
       __ENV__: JSON.stringify(mode),
     }),
     new ForkTsCheckWebpackPlugin(),

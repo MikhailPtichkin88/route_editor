@@ -12,6 +12,9 @@ const router = jsonServer.router(path.resolve(__dirname, 'db.json'))
 
 server.use(jsonServer.defaults({}))
 server.use(jsonServer.bodyParser)
+server.use(jsonServer.rewriter({
+  "/route_app_api/*": "/$1"
+}));
 
 // имитация реального апи
 server.use(async (req, res, next) => {

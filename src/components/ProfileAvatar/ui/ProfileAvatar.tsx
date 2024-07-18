@@ -1,3 +1,4 @@
+import { AppRoutesPaths } from '@/shared/config/router/routesConfig'
 import { UserAvatar } from '@/ui/UserAvatar'
 import { HTMLProps } from 'react'
 import { NavLink } from 'react-router-dom'
@@ -21,7 +22,7 @@ export const ProfileAvatar = ({
 
   return (
     <NavLink
-      to={'/profile'}
+      to={AppRoutesPaths.profile}
       className={wrapperClassName}
       data-testid="ProfileAvatar"
     >

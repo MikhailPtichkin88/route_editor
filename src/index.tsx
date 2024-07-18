@@ -16,7 +16,7 @@ const queryClient = new QueryClient()
 
 const container = createRoot(root)
 container.render(
-  <BrowserRouter>
+  <BrowserRouter basename={__BASE_URL__}>
     <ErrorBoundary>
       <YMaps>
         <QueryClientProvider client={queryClient}>
